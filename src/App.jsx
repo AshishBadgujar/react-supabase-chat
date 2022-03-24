@@ -1,6 +1,6 @@
 import { ChakraProvider, Box, theme, Flex, Input, InputGroup, Container, InputLeftElement } from "@chakra-ui/react";
 import { useState } from 'react'
-import { AiOutlineLogin, AiFillLock } from "react-icons/ai";
+import { FaLock } from "react-icons/fa";
 import { ColorModeSwitcher } from "./components/ColorModeSwitcher";
 import "./App.css";
 import Header from "./layout/Header";
@@ -14,6 +14,7 @@ function App() {
   const { username, setUsername } = useAppContext();
   const [isAuth, setIsAuth] = useState(false)
   const [pw, setPw] = useState('')
+
   const authenticate = (e) => {
     e.preventDefault()
     if (pw === joiningPw) {
@@ -45,38 +46,36 @@ function App() {
         :
         <div className="unlock">
           <Container maxW='container.sm'>
-            <Flex
-              flexDirection="column"
-              height="100vh"
-              px="5"
-              py="10"
-              justifyContent="center"
-              alignItems="center"
-            >
-              <InputGroup my="8">
-                <InputLeftElement
-                  pointerEvents="none"
-                  color="gray.300"
-                  children={<AiFillLock color="gray.300" />}
-                />
-                <Input
-                  required
-                  type="password"
-                  placeholder="Password"
-                  name="password"
-                  onChange={e => setPw(e.target.value)}
-                  value={pw}
-                  bg="white"
-                  border="none"
-                  autoFocus
-                />
-              </InputGroup>
-              <AiOutlineLogin
-                color="#38b2ac"
-                size="40px"
-                onClick={(e) => authenticate(e)}
-              />
-            </Flex>
+            <form onSubmit={(e) => authenticate(e)}>
+              <Flex
+                flexDirection="column"
+                height="100vh"
+                px="5"
+                py="10"
+                justifyContent="center"
+                alignItems="center"
+              >
+                <InputGroup my="8">
+                  <InputLeftElement
+                    pointerEvents="none"
+                    color="gray.300"
+                    children={<FaLock color="gray.300" />}
+                  />
+                  <Input
+                    required
+                    type="password"
+                    placeholder="Password"
+                    name="password"
+                    onChange={e => setPw(e.target.value)}
+                    value={pw}
+                    bg="white"
+                    border="none"
+                    autoFocus
+                  />
+                </InputGroup>
+                <button type="submit"></button>
+              </Flex>
+            </form>
           </Container>
         </div>
       }
