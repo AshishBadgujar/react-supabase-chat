@@ -30,3 +30,12 @@ html {
 a {
   color: teal !important;
 }
+.unlock{
+  background-image: url("unlock.svg") ;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height:  100vh ;
+  width: auto;
+
+}

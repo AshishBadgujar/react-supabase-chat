@@ -1,4 +1,4 @@
-import { ChakraProvider, Box, theme, Flex, Text, Input, InputGroup, Container, InputLeftElement } from "@chakra-ui/react";
+import { ChakraProvider, Box, theme, Flex, Input, InputGroup, Container, InputLeftElement } from "@chakra-ui/react";
 import { useState } from 'react'
 import { AiOutlineLogin, AiFillLock } from "react-icons/ai";
 import { ColorModeSwitcher } from "./components/ColorModeSwitcher";
@@ -43,41 +43,42 @@ function App() {
           </Box>
         </AppContextProvider>
         :
-        <Container maxW='container.sm'>
-          <Flex
-            flexDirection="column"
-            height="100vh"
-            px="5"
-            py="10"
-            justifyContent="center"
-            alignItems="center"
-          >
-            <Text fontSize='4xl' color="teal.400">Welcome</Text>
-            <InputGroup my="8">
-              <InputLeftElement
-                pointerEvents="none"
-                color="gray.300"
-                children={<AiFillLock color="gray.300" />}
+        <div className="unlock">
+          <Container maxW='container.sm'>
+            <Flex
+              flexDirection="column"
+              height="100vh"
+              px="5"
+              py="10"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <InputGroup my="8">
+                <InputLeftElement
+                  pointerEvents="none"
+                  color="gray.300"
+                  children={<AiFillLock color="gray.300" />}
+                />
+                <Input
+                  required
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  onChange={e => setPw(e.target.value)}
+                  value={pw}
+                  bg="white"
+                  border="none"
+                  autoFocus
+                />
+              </InputGroup>
+              <AiOutlineLogin
+                color="#38b2ac"
+                size="40px"
+                onClick={(e) => authenticate(e)}
               />
-              <Input
-                required
-                type="password"
-                placeholder="Password"
-                name="password"
-                onChange={e => setPw(e.target.value)}
-                value={pw}
-                bg="white"
-                border="none"
-                autoFocus
-              />
-            </InputGroup>
-            <AiOutlineLogin
-              color="#38b2ac"
-              size="40px"
-              onClick={(e) => authenticate(e)}
-            />
-          </Flex>
-        </Container>
+            </Flex>
+          </Container>
+        </div>
       }
     </ChakraProvider>
   );
