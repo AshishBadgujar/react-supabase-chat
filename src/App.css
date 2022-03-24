@@ -31,7 +31,7 @@ a {
   color: teal !important;
 }
 .unlock{
-  background-image: url("unlock.png") ;
+  background-image: url("/unlock.png") ;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
