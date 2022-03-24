@@ -5,7 +5,7 @@ import Messages from "./Messages";
 import { BsChevronDoubleDown } from "react-icons/bs";
 
 export default function Chat() {
-  const [height, setHeight] = useState(window.innerHeight - 205);
+  const [height, setHeight] = useState(window.innerHeight - 130);
   const {
     scrollRef,
     onScroll,
@@ -15,7 +15,7 @@ export default function Chat() {
   } = useAppContext();
   useEffect(() => {
     window.addEventListener("resize", () => {
-      setHeight(window.innerHeight - 205);
+      setHeight(window.innerHeight - 130);
     });
   }, []);
 
@@ -25,7 +25,6 @@ export default function Chat() {
         bg="white"
         p="5"
         overflow="auto"
-        borderRadius="10px"
         height={height}
         onScroll={onScroll}
         ref={scrollRef}

@@ -22,7 +22,6 @@ export default function MessageForm() {
     if (!message) return;
 
     setMessage("");
-
     try {
       const { error } = await supabase.from("messages").insert([
         {

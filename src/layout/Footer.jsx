@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <Box position="fixed" bottom="0" width="100%">
       <MessageForm />
-      <Grid
+      {/* <Grid
         textAlign="center"
         alignItems="center"
         py="4px"
@@ -15,7 +15,7 @@ export default function Footer() {
         <GridItem >
           <a>Made with ❤️</a>
         </GridItem>
-      </Grid>
+      </Grid> */}
     </Box>
   );
 }

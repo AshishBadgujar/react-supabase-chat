@@ -2,7 +2,6 @@ import { createContext, useContext, useEffect, useRef, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 
 const AppContext = createContext({});
-
 const AppContextProvider = ({ children }) => {
   const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
   const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
@@ -19,9 +18,7 @@ const AppContextProvider = ({ children }) => {
   const [unviewedMessageCount, setUnviewedMessageCount] = useState(0);
 
   const randomUsername = () => {
-    // return `@user${Date.now().toString().substr(-4)}`;
-    let person = prompt("Please enter your name");
-    return person
+    return `@user${Date.now().toString().substr(-4)}`;
   };
   const initializeUser = () => {
     let username;
@@ -31,6 +28,7 @@ const AppContextProvider = ({ children }) => {
   };
 
   useEffect(() => {
+
     initializeUser();
     getMessagesAndSubscribe();
     return () => {

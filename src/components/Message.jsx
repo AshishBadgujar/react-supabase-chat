@@ -7,7 +7,7 @@ export default function Message({ message, isYou }) {
   return (
     <Box display="grid" justifyItems={isYou ? "end" : "start"}>
       <Grid
-        templateRows="30px 1fr 25px"
+        templateRows="30px 1fr"
         templateColumns="1fr"
         w="70%"
         px="3"
@@ -33,7 +33,7 @@ export default function Message({ message, isYou }) {
           right: isYou ? "-10px" : "auto",
         }}
       >
-        <GridItem
+        {!isYou && <GridItem
           fontWeight="500"
           fontSize="md"
           justifySelf="start"
@@ -41,8 +41,7 @@ export default function Message({ message, isYou }) {
           mb="2"
         >
           <span>{message.username} </span>
-
-        </GridItem>
+        </GridItem>}
         <GridItem
           justifySelf="start"
           textAlign="left"

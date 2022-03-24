@@ -11,7 +11,6 @@ export default function Header() {
       position="sticky"
       top="0"
       zIndex="10"
-      borderBottom="20px solid #edf2f7"
     >
       <GridItem justifySelf="start" m="2">
         <Image src="/logo.png" height="30px" ml="2" />
