@@ -49,7 +49,7 @@ export default function Message({ message, isYou }) {
           fontSize="md"
           fontFamily="Montserrat, sans-serif"
         >
-          {message.text}
+          {atob(message.text)}
         </GridItem>
         <GridItem
           color="gray"

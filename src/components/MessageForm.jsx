@@ -20,12 +20,12 @@ export default function MessageForm() {
     e.preventDefault();
     setIsSending(true);
     if (!message) return;
-
+    let text = btoa(message);
     setMessage("");
     try {
       const { error } = await supabase.from("messages").insert([
         {
-          text: message,
+          text,
           username,
         },
       ]);

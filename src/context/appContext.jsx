@@ -28,7 +28,6 @@ const AppContextProvider = ({ children }) => {
   };
 
   useEffect(() => {
-
     initializeUser();
     getMessagesAndSubscribe();
     return () => {
@@ -55,7 +54,7 @@ const AppContextProvider = ({ children }) => {
         .select()
         .range(0, 49)
         .order("id", { ascending: false });
-      console.log(`data`, data);
+      // console.log(`data`, data);
       setLoadingInitial(false);
       if (error) {
         setError(error.message);
