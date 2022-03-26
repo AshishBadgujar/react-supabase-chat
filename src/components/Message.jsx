@@ -7,7 +7,7 @@ export default function Message({ message, isYou }) {
   return (
     <Box display="grid" justifyItems={isYou ? "end" : "start"}>
       <Grid
-        templateRows="30px 1fr"
+        templateRows="auto 1fr"
         templateColumns="1fr"
         w="70%"
         px="3"
